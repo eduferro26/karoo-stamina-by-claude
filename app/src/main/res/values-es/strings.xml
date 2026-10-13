@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Stamina</string>
+    <string name="ext_description">Stamina estimada a partir de W′bal y trabajo acumulado</string>
+    <string name="field_name">Stamina</string>
+    <string name="field_description">Stamina actual, techo potencial y tiempo hasta el agotamiento</string>
+    <string name="potential_fmt">Potencial %1$d%%</string>
+    <string name="sustainable">sostenible</string>
+    <string name="tte_seconds_fmt">≈ %1$d s</string>
+    <string name="tte_minutes_fmt">≈ %1$d min</string>
+    <string name="tte_over_fmt">&gt; 99 min</string>
+    <string name="settings_title">Ajustes de Stamina</string>
+    <string name="label_cp">Potencia crítica (CP, W)</string>
+    <string name="help_cp">Punto de partida: tu FTP. La CP suele ser algo mayor.</string>
+    <string name="label_wprime">W′ (kJ)</string>
+    <string name="help_wprime">Típico: 15–20 kJ. Es el ajuste que más influye en el resultado.</string>
+    <string name="label_weight">Peso (kg)</string>
+    <string name="help_weight">Vacío: se usa el peso del perfil del Karoo.</string>
+    <string name="label_free">Trabajo sin penalización (kJ/kg)</string>
+    <string name="help_free">Mientras no superes este trabajo acumulado, el potencial no baja.</string>
+    <string name="label_loss">Pérdida de potencial (% por kJ/kg)</string>
+    <string name="help_loss">Cuánto baja el potencial por cada kJ/kg por encima del umbral.</string>
+    <string name="label_max">Pérdida máxima (%)</string>
+    <string name="help_max">Tope de la bajada del potencial.</string>
+    <string name="preview_title">Ejemplo con estos valores (peso %1$d kg)</string>
+    <string name="preview_line">Tras %1$d kJ: potencial %2$d %%, CP efectiva %3$d W</string>
+    <string name="btn_save">Guardar</string>
+    <string name="btn_defaults">Valores por defecto</string>
+    <string name="saved">Ajustes guardados</string>
+    <string name="invalid_range">Introduce un valor entre %1$s y %2$s</string>
+</resources>

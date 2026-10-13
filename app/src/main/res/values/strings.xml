@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">Stamina</string>
+    <string name="ext_description">Estimated stamina based on W′bal and cumulative work</string>
+    <string name="field_name">Stamina</string>
+    <string name="field_description">Current stamina, potential ceiling and time to empty</string>
+    <string name="potential_fmt">Potential %1$d%%</string>
+    <string name="sustainable">sustainable</string>
+    <string name="tte_seconds_fmt">≈ %1$d s</string>
+    <string name="tte_minutes_fmt">≈ %1$d min</string>
+    <string name="tte_over_fmt">&gt; 99 min</string>
+    <string name="settings_title">Stamina settings</string>
+    <string name="label_cp">Critical power (CP, W)</string>
+    <string name="help_cp">Starting point: your FTP. CP is usually a bit higher.</string>
+    <string name="label_wprime">W′ (kJ)</string>
+    <string name="help_wprime">Typical: 15–20 kJ. This setting affects the result the most.</string>
+    <string name="label_weight">Weight (kg)</string>
+    <string name="help_weight">Empty: the weight from the Karoo profile is used.</string>
+    <string name="label_free">Work without penalty (kJ/kg)</string>
+    <string name="help_free">Below this accumulated work, the potential does not drop.</string>
+    <string name="label_loss">Potential loss (% per kJ/kg)</string>
+    <string name="help_loss">How much potential drops per kJ/kg above the threshold.</string>
+    <string name="label_max">Maximum loss (%)</string>
+    <string name="help_max">Cap on how far the potential can drop.</string>
+    <string name="preview_title">Example with these values (weight %1$d kg)</string>
+    <string name="preview_line">After %1$d kJ: potential %2$d %%, effective CP %3$d W</string>
+    <string name="btn_save">Save</string>
+    <string name="btn_defaults">Restore defaults</string>
+    <string name="saved">Settings saved</string>
+    <string name="invalid_range">Enter a value between %1$s and %2$s</string>
+</resources>

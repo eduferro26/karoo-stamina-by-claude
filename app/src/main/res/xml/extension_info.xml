@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ExtensionInfo
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    id="stamina"
+    name="@string/app_name"
+    description="@string/ext_description"
+    icon="@drawable/ic_stamina"
+    scansDevices="false">
+
+    <DataType
+        typeId="stamina"
+        displayName="@string/field_name"
+        description="@string/field_description"
+        graphical="true"
+        icon="@drawable/ic_stamina" />
+</ExtensionInfo>
