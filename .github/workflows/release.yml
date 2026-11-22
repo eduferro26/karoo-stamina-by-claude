@@ -1,0 +1,53 @@
+name: Release
+
+# Publica el APK como Release de GitHub, con una URL de descarga directa
+# (https://github.com/USUARIO/REPO/releases/download/TAG/karoo-stamina.apk)
+# que sí se puede compartir con la app Companion de Hammerhead.
+on:
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: "Etiqueta de la versión (por ejemplo v0.1)"
+        required: true
+        default: "v0.1"
+  push:
+    tags: ["v*"]
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    permissions:
+      contents: write   # crear la Release y subir el APK
+      packages: read
+
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-java@v5
+        with:
+          distribution: temurin
+          java-version: 17
+
+      - uses: gradle/actions/setup-gradle@v6
+        with:
+          gradle-version: "8.9"
+
+      - name: Compilar APK
+        env:
+          GPR_USER: ${{ github.actor }}
+          GPR_KEY: ${{ secrets.GPR_TOKEN || secrets.GITHUB_TOKEN }}
+        run: gradle :app:assembleDebug --stacktrace
+
+      - name: Crear Release y subir el APK
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TAG: ${{ github.event.inputs.tag || github.ref_name }}
+        run: |
+          cp app/build/outputs/apk/debug/app-debug.apk karoo-stamina.apk
+          if ! gh release view "$TAG" >/dev/null 2>&1; then
+            gh release create "$TAG" --target "$GITHUB_SHA" \
+              --title "Karoo Stamina $TAG" \
+              --notes "APK de depuración. Instalación: compartir el enlace del APK con la app Companion de Hammerhead."
+          fi
+          gh release upload "$TAG" karoo-stamina.apk --clobber
