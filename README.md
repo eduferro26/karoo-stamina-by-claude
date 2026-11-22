@@ -26,6 +26,19 @@ El workflow usa Gradle 8.9 instalado por la propia acción, así que el repo no 
 3. `gradle :app:installDebug` con el Karoo conectado por adb.
 4. En el Karoo: perfil de actividad → añadir campo → Stamina.
 
+## Instalar en el Karoo (sideload)
+
+La app Companion de Hammerhead no acepta la URL de un artefacto de Actions (exige iniciar sesión en GitHub). Hay que publicar el APK como Release:
+
+1. En GitHub: Actions → **Release** → **Run workflow**, escribe una etiqueta (por ejemplo `v0.1`) y ejecútalo.
+2. Al terminar, entra en la pestaña **Releases** del repositorio y abre la versión creada.
+3. En el navegador del móvil, **mantén pulsado el enlace `karoo-stamina.apk`** y elige la app Companion de Hammerhead en el menú de compartir.
+4. Pulsa **Install** en el Karoo.
+
+El repositorio debe ser **público** para que la URL funcione sin iniciar sesión. Si es privado, descarga el APK desde la Release al móvil y compártelo como archivo.
+
+Cada build se firma con una clave de depuración distinta. Si ya hay una versión instalada y la nueva da conflicto, desinstala la anterior antes.
+
 ## Ajustes
 
 La app incluye una pantalla de ajustes (`SettingsActivity`) con CP, W′, peso opcional y los tres parámetros de durabilidad, validados por rango. Muestra una previsualización de cuánto bajaría el potencial tras 2000, 4000 y 6000 kJ con los valores escritos, útil para calibrar. Los cambios se aplican al motor en caliente, incluso durante una actividad.
